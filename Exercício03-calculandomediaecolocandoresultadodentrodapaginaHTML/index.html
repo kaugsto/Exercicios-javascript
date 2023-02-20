@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font: 12pt arial;
+        }
+        button{
+            font-size: 12pt;
+            padding: 20px;
+        }
+        #situacao{
+            width: 300px;
+            border: 1px black solid;
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <!--Calculando a média dos alunos e colocando a resposta/retorno no html-->
+    <h1>Média alunos</h1>
+    <button onclick="media()">Calcular média</button>
+    <div id='situacao'>
+        <p>O resultado vai aparecer aqui..</p>
+    </div>
+     <script>
+        function media(){
+            let nome = window.prompt('Qual nome do aluno ?')
+            let numero1 = Number (window.prompt (`Qual foi a primeira nota de  ${nome} ?`))
+            let numero2 = Number (window.prompt (`Qual foi a segunda nota de  ${nome} ?`))
+            let med = (numero1 + numero2)/2
+            console.log(med)
+
+            let res = document.getElementById('situacao')
+            res.innerHTML = `Sr(a), ${nome}`
+            res.innerHTML += `<p>As notas obtidas foram <mark>${numero1} e ${numero2}</mark></p>`
+            res.innerHTML += `<p>A média final é <mark>${med}</mark></p>` 
+            //IMPORTANTE
+            //O <mark> é para deixar marcado/amarelo.
+            //O += serve para acumular/somar com a frase ou qq coisa anterior.
+            }
+    </script>
+    <!-- :. Para colocar o resultado na página HTML é necessário atrelar a tag (no exemplo 'situacao') a uma variável
+     e depois através do inner.HTML voce coloca o resultado dentro da tag
+    -->
+
+</body>
+</html>
