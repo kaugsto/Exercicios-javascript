@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaiorValorcomEstruturaIF</title>
+    <style>
+        body { font: 12pt Arial; }
+        h1, h2, h3 { font-family: 'Pacifico', cursive; font-weight: normal;}
+        button { font-size: 12pt; padding: 30px; }
+    </style>
+</head>
+<!--Neste exercício ao digitar dois números o software identificará qual é o maior e irá imprimir na tela -->
+<!--Caso os valores sejam iguais ele também irá imprimir essa informação-->
+<body>
+    <h1>Maior valor</h1>
+    <button onclick="maiorvalor()">Clique para começar</button>
+    <section id="saida">
+        <p>O resultado aparecerá aqui</p>
+    </section>
+
+
+    <script>
+        function maiorvalor(){
+            let num1 = Number(window.prompt('Digite um número: '));
+            let num2 = Number(window.prompt('Digite outro número: '))
+            
+             //Essa é a indicação|comando para o resultado aparecer na section#saida
+            let resultado = document.querySelector('section#saida')
+
+            if (num1 > num2){
+                resultado.innerHTML = `<p>Analisando os valores de <mark>${num1}</mark> e <mark>${num2}</mark>. O maior valor é <mark>${num1}</mark>.</p>`
+            }else if (num2 > num1){
+                resultado.innerHTML = `<p>Analisando os valores de <mark>${num1}</mark> e <mark>${num2}</mark>. O maior valor é <mark>${num2}</mark>.</p>`                    
+            }else {
+                resultado.innerHTML = `<p>Analisando os valores de <mark>${num1}</mark> e <mark>${num2}</mark>. Os valores são iguais </p>`
+            }
+        }
+        
+    </script>
+</body>
+</html>
